@@ -436,3 +436,340 @@ UPDATE students set eno=82020 WHERE city="old Delhi";
 SELECT * From students;
 /* 2022-05-08 16:06:06 [5 ms] */ 
 SELECT * FROM Students;
+/* 2022-05-08 16:49:37 [3 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 16:53:06 [4 ms] */ 
+SELECT * FROM Students;
+/* 2022-05-08 16:54:53 [3 ms] */ 
+use students;
+/* 2022-05-08 16:55:04 [3 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 16:55:06 [14 ms] */ 
+INSERT INTO students VALUES(1,'kamar','BCA',12020,'N.H khan','Tahira','Delhi','B+',1,7557662302);
+/* 2022-05-08 16:55:06 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 16:55:34 [7 ms] */ 
+INSERT INTO students VALUES(2,'Shruti','BCA',22020,'Sunil verma','neelam','Delhi','O-',1,7557222302);
+/* 2022-05-08 16:55:34 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 16:55:39 [10 ms] */ 
+INSERT INTO students VALUES(3,'Muskan','BCA',32020,'ashok','nandita','Delhi','B+',1,9567223026);
+/* 2022-05-08 16:55:39 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 16:55:45 [9 ms] */ 
+INSERT INTO students VALUES(1,'Isha','BCA',42020,'ashish','mrs.verma','Delhi','o+',1,9567223026);
+/* 2022-05-08 16:55:45 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 16:55:56 [9 ms] */ 
+INSERT INTO students VALUES(5,'mahiva','BCA',52020,'MR.Bansal','mrs.Bansal','Delhi','A+',1,8568242026);
+/* 2022-05-08 16:55:56 [4 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 16:56:03 [32 ms] */ 
+INSERT INTO students VALUES(6,'vasnhu','BCA',62020,'MR.Negi','mrs.Negi','Delhi','B+',1,7591242026);
+/* 2022-05-08 16:56:03 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 16:56:08 [31 ms] */ 
+INSERT INTO students VALUES(7,'Vedant','BCA',72020,'MR.Kumar','mrs.Kumar','Delhi','B+',1,8591242026);
+/* 2022-05-08 16:56:08 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 16:56:11 [8 ms] */ 
+SELECT * from students where eno BETWEEN 10000 AND 30000;
+/* 2022-05-08 16:56:13 [11 ms] */ 
+INSERT INTO students VALUES(7,'Vedant','BCA',72020,'MR.Kumar','mrs.Kumar','Old Delhi','B+',1,8591242026);
+/* 2022-05-08 16:56:13 [2 ms] */ 
+SELECT * from students where eno BETWEEN 10000 AND 30000;
+/* 2022-05-08 16:56:15 [3 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 16:56:17 [6 ms] */ 
+SELECT * from students where city in ('delhi');
+/* 2022-05-08 16:56:19 [3 ms] */ 
+SELECT * from students where eno not BETWEEN 10000 AND 30000;
+/* 2022-05-08 16:56:21 [2 ms] */ 
+SELECT * from students where city not in ('delhi');
+/* 2022-05-08 16:56:23 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 16:56:30 [9 ms] */ 
+UPDATE  students set sno=2 where name="shruti";
+/* 2022-05-08 16:56:30 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 16:57:00 [31 ms] */ 
+UPDATE  students set sno=4 where name="isha";
+/* 2022-05-08 16:57:01 [5 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 16:57:09 [3 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-08 16:57:16 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 16:57:18 [2 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-08 16:57:19 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 16:57:23 [2 ms] */ 
+SELECT * from students where city not in ('delhi');
+/* 2022-05-08 16:57:26 [2 ms] */ 
+SELECT * from students where eno not BETWEEN 10000 AND 30000;
+/* 2022-05-08 16:58:50 [4 ms] */ 
+SELECT * FROM Students;
+/* 2022-05-08 16:59:11 [7 ms] */ 
+UPDATE students set sno=8 WHERE city="old Delhi";
+/* 2022-05-08 16:59:11 [4 ms] */ 
+SELECT * FROM Students;
+/* 2022-05-08 17:53:47 [13 ms] */ 
+SELECT * FROM mysql.User;
+/* 2022-05-08 17:55:44 [2 ms] */ 
+use students;
+/* 2022-05-08 17:57:08 [7 ms] */ 
+SELECT * FROM Students;
+/* 2022-05-08 17:57:35 [3 ms] */ 
+SELECT * from students;
+/* 2022-05-08 18:05:09 [4 ms] */ 
+SHOW databases;
+/* 2022-05-08 18:05:24 [2 ms] */ 
+use students;
+/* 2022-05-08 18:05:36 [4 ms] */ 
+SELECT * from students;
+/* 2022-05-08 18:12:04 [30 ms] */ 
+UPDATE students set eno=82020 WHERE city="old Delhi";
+/* 2022-05-08 18:12:04 [1 ms] */ 
+SELECT * from students;
+/* 2022-05-08 18:12:13 [50 ms] */ 
+alter table students ADD PRIMARY KEY (eno);
+/* 2022-05-08 18:12:59 [2 ms] */ 
+SELECT * from students;
+/* 2022-05-08 18:13:08 [13 ms] */ 
+DESCRIBE students;
+/* 2022-05-08 18:13:21 [47 ms] */ 
+alter table students ADD PRIMARY KEY (eno);
+/* 2022-05-08 18:13:25 [9 ms] */ 
+DESCRIBE students;
+/* 2022-05-08 18:30:08 [4 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 18:34:12 [32 ms] */ 
+INSERT INTO students(sno) VALUES(null);
+/* 2022-05-08 18:34:12 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-08 18:41:05 [3 ms] */ 
+SELECT * From students;
+/* 2022-05-08 18:42:55 [3 ms] */ 
+use students;
+/* 2022-05-08 18:44:31 [3 ms] */ 
+DELETE from students where eno=0;
+/* 2022-05-08 18:44:35 [3 ms] */ 
+SELECT * From students;
+/* 2022-05-09 21:26:38 [5 ms] */ 
+use  students;
+/* 2022-05-09 21:27:31 [2 ms] */ 
+use college;
+/* 2022-05-09 21:28:36 [5 ms] */ 
+show databases;
+/* 2022-05-09 21:28:48 [1 ms] */ 
+use college;
+/* 2022-05-09 21:31:35 [2 ms] */ 
+CREATE DATABASE collegee;
+/* 2022-05-09 21:32:56 [2 ms] */ 
+use students;
+/* 2022-05-09 21:33:20 [6 ms] */ 
+drop table students;
+/* 2022-05-09 21:35:00 [2 ms] */ 
+show databases;
+/* 2022-05-09 21:37:53 [21 ms] */ 
+CREATE TABLE table_name(  
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
+    create_time DATETIME COMMENT 'Create Time',
+    update_time DATETIME COMMENT 'Update Time',
+    content VARCHAR(255) COMMENT 'content'
+) DEFAULT CHARSET UTF8 COMMENT 'newTable';
+/* 2022-05-09 21:38:11 [5 ms] */ 
+SELECT * from table_name;
+/* 2022-05-09 21:38:49 [12 ms] */ 
+drop TABLE table_name;
+/* 2022-05-09 21:45:22 [5 ms] */ 
+create database students;
+/* 2022-05-09 21:54:38 [3 ms] */ 
+use students;
+/* 2022-05-09 21:54:43 [19 ms] */ 
+create table students(sno int,name varchar(20),cource varchar(20),eno int,fname varchar(20),mname varchar(20),city varchar(20),blood varchar(20),shift int,phone int);
+/* 2022-05-09 21:54:59 [6 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 21:57:13 [4 ms] */ 
+create database students;
+/* 2022-05-09 21:57:15 [2 ms] */ 
+use students;
+/* 2022-05-09 22:10:18 [3 ms] */ 
+create database students;
+/* 2022-05-09 22:10:20 [1 ms] */ 
+use students;
+/* 2022-05-09 22:10:28 [19 ms] */ 
+create table student(sno int,name varchar(20),cource varchar(20),eno int,fname varchar(20),mname varchar(20),city varchar(20),blood varchar(20),shift int,phone VARCHAR(12));
+/* 2022-05-09 22:12:10 [4 ms] */ 
+create database college;
+/* 2022-05-09 22:12:26 [2 ms] */ 
+use college;
+/* 2022-05-09 22:12:27 [34 ms] */ 
+create table student(sno int,name varchar(20),cource varchar(20),eno int,fname varchar(20),mname varchar(20),city varchar(20),blood varchar(20),shift int,phone VARCHAR(12));
+/* 2022-05-09 22:12:34 [13 ms] */ 
+create table students(sno int,name varchar(20),cource varchar(20),eno int,fname varchar(20),mname varchar(20),city varchar(20),blood varchar(20),shift int,phone VARCHAR(12));
+/* 2022-05-09 22:12:36 [5 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 22:12:37 [7 ms] */ 
+INSERT INTO students VALUES(1,'kamar','BCA',12020,'N.H khan','Tahira','Delhi','B+',1,7557662302);
+/* 2022-05-09 22:12:37 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 22:12:39 [5 ms] */ 
+INSERT INTO students VALUES(1,'Shruti','BCA',22020,'Sunil verma','neelam','Delhi','O-',1,7557222302);
+/* 2022-05-09 22:12:39 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 22:12:41 [8 ms] */ 
+INSERT INTO students VALUES(1,'Muskan','BCA',32020,'ashok','nandita','Delhi','B+',1,9567223026);
+/* 2022-05-09 22:12:41 [1 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 22:12:44 [7 ms] */ 
+INSERT INTO students VALUES(1,'Isha','BCA',42020,'ashish','mrs.verma','Delhi','o+',1,9567223026);
+/* 2022-05-09 22:12:44 [1 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 22:12:45 [3 ms] */ 
+INSERT INTO students VALUES(1,'mahiva','BCA',52020,'MR.Bansal','mrs.Bansal','Delhi','A+',1,8568242026);
+/* 2022-05-09 22:12:45 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 22:12:47 [5 ms] */ 
+INSERT INTO students VALUES(1,'mahiva','BCA',52020,'MR.Bansal','mrs.Bansal','Delhi','A+',1,8568242026);
+/* 2022-05-09 22:12:47 [1 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 22:12:48 [8 ms] */ 
+INSERT INTO students VALUES(1,'vasnhu','BCA',62020,'MR.Negi','mrs.Negi','Delhi','B+',1,7591242026);
+/* 2022-05-09 22:12:48 [1 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 22:12:51 [7 ms] */ 
+INSERT INTO students VALUES(1,'Vedant','BCA',72020,'MR.Kumar','mrs.Kumar','Delhi','B+',1,8591242026);
+/* 2022-05-09 22:12:51 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 22:12:54 [9 ms] */ 
+INSERT INTO students VALUES(1,'vasnhu','BCA',62020,'MR.Negi','mrs.Negi','Delhi','B+',1,7591242026);
+/* 2022-05-09 22:12:54 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 22:12:56 [2 ms] */ 
+SELECT * from students where eno BETWEEN 10000 AND 30000;
+/* 2022-05-09 22:13:03 [8 ms] */ 
+INSERT INTO students VALUES(7,'Vedant','BCA',72020,'MR.Kumar','mrs.Kumar','Old Delhi','B+',1,8591242026);
+/* 2022-05-09 22:13:03 [1 ms] */ 
+SELECT * from students where eno BETWEEN 10000 AND 30000;
+/* 2022-05-09 22:13:05 [7 ms] */ 
+SELECT * from students where city in ('delhi');
+/* 2022-05-09 22:13:07 [3 ms] */ 
+SELECT * from students where eno not BETWEEN 10000 AND 30000;
+/* 2022-05-09 22:13:08 [3 ms] */ 
+SELECT * from students where city not in ('delhi');
+/* 2022-05-09 22:13:10 [34 ms] */ 
+UPDATE  students set sno=2 where name="shruti";
+/* 2022-05-09 22:13:10 [1 ms] */ 
+SELECT * from students where city not in ('delhi');
+/* 2022-05-09 22:13:10 [8 ms] */ 
+UPDATE  students set sno=3 where name="isha";
+/* 2022-05-09 22:13:10 [2 ms] */ 
+SELECT * from students where city not in ('delhi');
+/* 2022-05-09 22:13:12 [6 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:14 [3 ms] */ 
+UPDATE  students set sno=4 where name="muskan";
+/* 2022-05-09 22:13:14 [1 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:15 [7 ms] */ 
+UPDATE  students set sno=4 where name="isha";
+/* 2022-05-09 22:13:15 [1 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:16 [5 ms] */ 
+UPDATE  students set sno=5 where name="mahiva";
+/* 2022-05-09 22:13:16 [2 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:18 [1 ms] */ 
+UPDATE  students set sno=6 where name="vanshu";
+/* 2022-05-09 22:13:19 [7 ms] */ 
+UPDATE  students set sno=8 where city="old Delhi";
+/* 2022-05-09 22:13:19 [1 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:21 [8 ms] */ 
+UPDATE  students set sno=7 where city="Delhi";
+/* 2022-05-09 22:13:21 [1 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:22 [8 ms] */ 
+UPDATE  students set sno=2 where name="shruti";
+/* 2022-05-09 22:13:22 [1 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:23 [3 ms] */ 
+UPDATE  students set sno=4 where name="isha";
+/* 2022-05-09 22:13:23 [2 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:25 [8 ms] */ 
+UPDATE  students set sno=3 where name="muskan";
+/* 2022-05-09 22:13:25 [3 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:26 [7 ms] */ 
+UPDATE  students set sno=5 where name="mahiva";
+/* 2022-05-09 22:13:26 [2 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:27 [9 ms] */ 
+UPDATE  students set sno=6 where name="vasnhu";
+/* 2022-05-09 22:13:27 [1 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:29 [2 ms] */ 
+UPDATE  students set sno=8 where city="old Delhi";
+/* 2022-05-09 22:13:29 [2 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:31 [27 ms] */ 
+UPDATE  students set sno=8 where name="vedant";
+/* 2022-05-09 22:13:31 [2 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:33 [7 ms] */ 
+UPDATE  students set sno=7 where name="vedant";
+/* 2022-05-09 22:13:33 [2 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:34 [27 ms] */ 
+UPDATE  students set sno=1 where name="kamar";
+/* 2022-05-09 22:13:34 [2 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:37 [8 ms] */ 
+UPDATE students set sno=8 WHERE city="old Delhi";
+/* 2022-05-09 22:13:37 [1 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:13:39 [3 ms] */ 
+UPDATE students set eno=82020 WHERE city="old Delhi";
+/* 2022-05-09 22:13:39 [2 ms] */ 
+SELECT * from  students WHERE eno BETWEEN 30000 and 40000 AND not sno IN(2,3,4);
+/* 2022-05-09 22:15:39 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 22:18:29 [6 ms] */ 
+DELETE from students where name="vasnhu";
+/* 2022-05-09 22:18:29 [1 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 22:18:42 [27 ms] */ 
+INSERT INTO students VALUES(1,'vasnhu','BCA',62020,'MR.Negi','mrs.Negi','Delhi','B+',1,7591242026);
+/* 2022-05-09 22:18:42 [1 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 22:19:15 [8 ms] */ 
+DELETE from students where name="mahiva";
+/* 2022-05-09 22:19:15 [2 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 22:19:27 [27 ms] */ 
+INSERT INTO students VALUES(1,'mahiva','BCA',52020,'MR.Bansal','mrs.Bansal','Delhi','A+',1,8568242026);
+/* 2022-05-09 22:19:27 [1 ms] */ 
+SELECT * FROM students;
+/* 2022-05-09 22:19:33 [27 ms] */ 
+alter table students ADD PRIMARY KEY (eno);
+/* 2022-05-09 22:20:23 [3 ms] */ 
+SELECT * FROM students;
+/* 2022-05-10 10:41:48 [33 ms] */ 
+select user();
+/* 2022-05-11 20:28:57 [12 ms] */ 
+SELECT * FROM Student;
+/* 2022-05-11 20:29:12 [5 ms] */ 
+SELECT * FROM Students;
+/* 2022-05-12 13:03:36 [16 ms] */ 
+SELECT * FROM students;
+/* 2022-05-12 13:04:03 [17 ms] */ 
+alter table students ALTER cource set default  'MCA';
+/* 2022-05-12 13:25:22 [3 ms] */ 
+SELECT * FROM students;
+/* 2022-05-12 13:29:23 [33 ms] */ 
+insert into students values(9,'rishika',default,45678,'','monika','delhi','AB+',1,7011502190);
+/* 2022-05-12 15:21:05 [37 ms] */ 
+TRUNCATE table student;
