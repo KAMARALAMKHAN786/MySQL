@@ -1,10 +1,9 @@
-CREATE DATABASE insurance;
 
  create table person(driver_id varchar(10),name varchar(10),address varchar(10),primary key(driver_id));
  create table car(regno varchar(10),model varchar(10),year int,primary key(regno));
 create table accident(report_number int,accd_date date,location varchar(10),primary key(report_number));
- create table owns(driver_id varchar(10),regno varchar(10),primary key(driver_id,regno));
- create table participated(driver_id varchar(10),regno varchar(10),report_number int,damage_amount int,primary key(driver_id,regno,report_number));
+ create table owns(driver_id varchar(10),regno varchar(10),primary key(driver_id,regno),foreign key(driver_id) references person(driver_id),foreign key(regno) references car(regno));
+ create table participated(driver_id varchar(10),regno varchar(10),report_number int,damage_amount int,primary key(driver_id,regno,report_number),foreign key(driver_id) references person(driver_id),foreign key(regno) references car(regno),foreign key(report_number) references accident(report_number));
  SELECT * from person;
 
 insert into person values('D192','&name','delhi');
@@ -27,16 +26,10 @@ insert into accident values(1238,'2021-03-11','chennai');
  insert into owns values('D194','dl9116');
  insert into owns values('D195','dl9616');
  insert into owns values('D196','dl9617');
- insert into participated values('D192','Dl8652',25421,35000);
- insert into participated values('D193','Dl8252',25221,40000);
- insert into participated values('D194','Dl9252',35221,50000);
- insert into participated values('D195','Dl2252',35421,60000);
- insert into participated values('D196','Dl7252',98421,10000);
-  update participated set damage_amount=25000 where report_number=35221 and regno='Dl9252'; 
-   insert into accident values(1245,'2022-01-09','Rohini');
-   insert into participated values('dl8721','12578',12548,25000);
-    select count(distinct o.driver_id) as People from owns o,participated p,accident a where a.accd_date like
- '%18' and o.regno=p.regno and p.report_number=a.report_number;
-  select count(*) as Totalcars from car c,participated p where c.regno=p.regno and c.model='swift';
+  select count(0) as Totalcars from car c,participated p where c.regno=p.regno and c.model='swift';
+  SELECT * FROM accident;
+
 desc participated;
 use insurance;
+
+SELECT driver_id,regno,report_number,damage_amount FROM participated;

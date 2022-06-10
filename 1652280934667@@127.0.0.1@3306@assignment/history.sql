@@ -77,3 +77,111 @@ desc class;
 desc iamarks;
 /* 2022-06-07 09:47:50 [15 ms] */ 
 desc class;
+/* 2022-06-09 13:28:29 [11 ms] */ 
+Select sum(test1) from iamarks;
+/* 2022-06-09 13:31:43 [7 ms] */ 
+Select avg(test1) from iamarks;
+/* 2022-06-09 13:32:37 [4 ms] */ 
+Select MIN(test1) from iamarks;
+/* 2022-06-09 13:35:52 [4 ms] */ 
+Select Max(test1) from iamarks;
+/* 2022-06-09 21:46:04 [7 ms] */ 
+Select Max(test1) from iamarks;
+/* 2022-06-09 21:56:33 [7 ms] */ 
+SELECT test1 +1 as 'unit1' FROM iamarks;
+/* 2022-06-09 22:14:36 [5 ms] */ 
+SELECT (Title) from subject WHERE SUBCODE>14;
+/* 2022-06-09 22:25:59 [28 ms] */ 
+SELECT (usn) FROM iamarks;
+/* 2022-06-09 22:26:42 [6 ms] */ 
+SELECT (usn) FROM iamarks where usn>32021 IN (
+	SELECT Title from subject WHERE SUBCODE>14
+	);
+/* 2022-06-09 22:29:42 [28 ms] */ 
+SELECT (Title) FROM subject where SUBCODE>14 IN (
+	SELECT Title from iamarks WHERE test1>1
+	);
+/* 2022-06-09 22:32:00 [2 ms] */ 
+SELECT (Title) FROM subject where SUBCODE>14 IN (
+	SELECT test1 from iamarks WHERE test1>1
+	);
+/* 2022-06-09 22:32:08 [2 ms] */ 
+SELECT (Title) FROM subject where SUBCODE>14 IN (
+	SELECT test1 from iamarks WHERE test1>14
+	);
+/* 2022-06-09 22:32:27 [8 ms] */ 
+SELECT (Title) FROM subject where SUBCODE>14 IN (
+	SELECT test1 from iamarks WHERE usn>3000
+		);
+/* 2022-06-09 22:40:35 [3 ms] */ 
+SELECT iamarks.test1,iamarks.test2,subject.title FROM iamarks INNER JOIN subject ON iamarks.SUBCODE;
+/* 2022-06-09 22:42:50 [28 ms] */ 
+SELECT iamarks.test1,iamarks.test2,subject.title FROM iamarks LEFT JOIN subject ON iamarks.SUBCODE;
+/* 2022-06-09 22:43:13 [2 ms] */ 
+SELECT iamarks.test1,iamarks.test3,subject.title FROM iamarks LEFT JOIN subject ON iamarks.SUBCODE;
+/* 2022-06-09 22:44:33 [1 ms] */ 
+SELECT iamarks.test1,iamarks.test2,subject.title FROM iamarks INNER JOIN subject ON iamarks.SUBCODE;
+/* 2022-06-09 22:48:36 [2 ms] */ 
+SELECT iamarks.test1,iamarks.test2,subject.title FROM iamarks LEFT JOIN subject ON iamarks.SUBCODE;
+/* 2022-06-09 22:48:53 [1 ms] */ 
+SELECT iamarks.test1,iamarks.test3,subject.title FROM iamarks LEFT JOIN subject ON iamarks.SUBCODE;
+/* 2022-06-09 22:49:26 [2 ms] */ 
+SELECT iamarks.test1,iamarks.test3,subject.title FROM iamarks RIGHT JOIN subject ON iamarks.SUBCODE;
+/* 2022-06-10 13:19:39 [7 ms] */ 
+desc iamarks;
+/* 2022-06-10 13:19:49 [11 ms] */ 
+desc class;
+/* 2022-06-10 13:23:02 [3 ms] */ 
+use assignment;
+/* 2022-06-10 13:28:42 [29 ms] */ 
+show tables;
+/* 2022-06-10 13:28:44 [39 ms] */ 
+create table Demo(SNo int, SName varchar(50), Phone varchar(20), Gender varchar(2));
+/* 2022-06-10 13:28:46 [2 ms] */ 
+select *from demo;
+/* 2022-06-10 13:28:48 [6 ms] */ 
+insert into demo values(5, 'lata', 9835673189, 'F');
+/* 2022-06-10 13:28:54 [2 ms] */ 
+select SName as Name from demo;
+/* 2022-06-10 13:28:56 [28 ms] */ 
+select *from demo as dmo;
+/* 2022-06-10 13:28:57 [7 ms] */ 
+select count (SName) from demo;
+/* 2022-06-10 13:28:59 [17 ms] */ 
+select avg(SNo) from demo;
+/* 2022-06-10 13:29:00 [2 ms] */ 
+select sum(SNo) from demo;
+/* 2022-06-10 13:29:01 [2 ms] */ 
+select min(SNo) from demo;
+/* 2022-06-10 13:29:02 [2 ms] */ 
+select max(SNo) from demo;
+/* 2022-06-10 13:29:12 [44 ms] */ 
+alter table demo add primary key (SNo);
+/* 2022-06-10 13:29:13 [10 ms] */ 
+alter table demo add unique key (SName);
+/* 2022-06-10 13:29:14 [39 ms] */ 
+ALTER TABLE student MODIFY USN varchar(2) NOT NULL;
+/* 2022-06-10 13:29:16 [35 ms] */ 
+ALTER TABLE student ADD CHECK (USN>=0);
+/* 2022-06-10 13:29:17 [9 ms] */ 
+ALTER TABLE student ALTER Address SET DEFAULT 'Shahdhra';
+/* 2022-06-10 13:29:19 [15 ms] */ 
+desc student;
+/* 2022-06-10 13:29:27 [18 ms] */ 
+create table practice(SNo int PRIMARY KEY,Id int, FSName varchar(20), LSName varchar(20));
+/* 2022-06-10 13:29:28 [6 ms] */ 
+insert into practice values(5,5,"Ankush", "Yadav");
+/* 2022-06-10 13:29:30 [2 ms] */ 
+select *from practice;
+/* 2022-06-10 13:29:32 [6 ms] */ 
+select count(Test1) Subcode from iamarks group by Subcode;
+/* 2022-06-10 13:29:33 [2 ms] */ 
+select count(Test1) ,FinalIA from iamarks group by FinalIA order by FinalIA desc;
+/* 2022-06-10 13:30:02 [34 ms] */ 
+create view present as select FSName, SName from practice, demo where practice.SNo= demo.SNo;
+/* 2022-06-10 13:30:04 [5 ms] */ 
+create view past as select FSName from practice where SNo>=0;
+/* 2022-06-10 13:30:07 [2 ms] */ 
+select *from past;
+/* 2022-06-10 13:30:18 [3 ms] */ 
+select *from present;
