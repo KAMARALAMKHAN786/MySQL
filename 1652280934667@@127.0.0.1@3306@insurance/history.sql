@@ -80,3 +80,9 @@ SELECT * FROM person;
 SELECT * FROM car;
 /* 2022-06-10 22:56:07 [4 ms] */ 
 SELECT * FROM accident;
+/* 2022-06-15 12:32:37 [60 ms] */ 
+select count(distinct o.driver_id) as People from owns o,participated p,accident a where a.accd_date like
+ '%08' and o.regno=p.regno and p.report_number=a.report_number;
+/* 2022-06-15 12:33:41 [4 ms] */ 
+select count(distinct o.driver_id) as People from owns o,participated p,accident a where a.accd_date like
+ '2008' and o.regno=p.regno and p.report_number=a.report_number;

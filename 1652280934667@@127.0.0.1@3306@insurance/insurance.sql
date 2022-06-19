@@ -26,6 +26,8 @@ insert into accident values(1238,'2021-03-11','chennai');
  insert into owns values('D194','dl9116');
  insert into owns values('D195','dl9616');
  insert into owns values('D196','dl9617');
+  select count(distinct o.driver_id) as People from owns o,participated p,accident a where a.accd_date like
+ '2008' and o.regno=p.regno and p.report_number=a.report_number;
   select count(0) as Totalcars from car c,participated p where c.regno=p.regno and c.model='swift';
   SELECT * FROM accident;
 
@@ -33,3 +35,5 @@ desc participated;
 use insurance;
 
 SELECT driver_id,regno,report_number,damage_amount FROM participated;
+
+
