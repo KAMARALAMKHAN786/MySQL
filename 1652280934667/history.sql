@@ -815,3 +815,43 @@ select clientno as 'Client',orderno as 'Ordered' from orders;
 select * from order_line where item_number between 1 and 200 OR item_number>1000 AND item_cost not in(1000,2000,3000) OR orderno!=1000;
 /* 2022-07-12 09:55:25 [3 ms] */ 
 select * from client order by name desc;
+/* 2022-07-12 10:00:58 [29 ms] */ 
+alter table orders add primary key(orderno);
+/* 2022-07-12 10:01:07 [23 ms] */ 
+alter table order_line add primary key(order_line_number);
+/* 2022-07-12 10:01:10 [31 ms] */ 
+alter table order_line add foreign key(orderno) references orders(orderno);
+/* 2022-07-12 10:01:18 [7 ms] */ 
+insert into employee values(101,'CLERK',4,15000,'RITIK','BANAL');
+/* 2022-07-12 10:01:32 [3 ms] */ 
+SELECT * from employee;
+/* 2022-07-12 10:03:24 [2 ms] */ 
+select item_number,no_of_item*item_cost as 'Total Cost' from order_line;
+/* 2022-07-12 10:04:30 [7 ms] */ 
+insert into item values(40,'Stationery',500);
+/* 2022-07-12 10:04:31 [7 ms] */ 
+insert into item values(41,'Grocery',570);
+/* 2022-07-12 10:04:32 [4 ms] */ 
+insert into item values(40,'Stationery',15000);
+/* 2022-07-12 10:04:33 [7 ms] */ 
+insert into item values(40,'Machinery',28000);
+/* 2022-07-12 10:04:35 [8 ms] */ 
+insert into item values(40,'Machinery',30000);
+/* 2022-07-12 10:04:36 [7 ms] */ 
+insert into item values(40,'Machinery',28000);
+/* 2022-07-12 10:04:42 [2 ms] */ 
+select clientno as 'Client',orderno as 'Ordered' from orders;
+/* 2022-07-12 10:05:14 [2 ms] */ 
+select name,order_date from client,orders where client.clientno=orders.clientno;
+/* 2022-07-12 10:09:25 [8 ms] */ 
+SELECT substring (name, 2, 5) from client;
+/* 2022-07-12 10:11:34 [7 ms] */ 
+SELECT  lower(name) from client;
+/* 2022-07-12 10:13:53 [7 ms] */ 
+SELECT name , order_date from client join orders on 'client.clientno'='order.clientno';
+/* 2022-07-12 10:15:37 [5 ms] */ 
+select * from order_line where item_number between 1 and 200 OR item_number>1000 AND item_cost not in(1000,2000,3000) OR orderno!=1000;
+/* 2022-07-12 10:15:44 [2 ms] */ 
+select * from order_line where item_number between 1 and 200 OR item_number>=1000 AND item_cost not in(1000,2000,3000) OR orderno!=1000;
+/* 2022-07-12 10:15:49 [6 ms] */ 
+select * from order_line where item_number between 1 and 200 OR item_number=1000 AND item_cost not in(1000,2000,3000) OR orderno!=1000;
