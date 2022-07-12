@@ -1843,3 +1843,77 @@ delete from book_ where book_no in (select book_no from lss_rec_ where iss_date=
 ));
 /* 2022-06-19 18:41:19 [2 ms] */ 
 delete from book_ where book_no in (select book_no from lss_rec_ where iss_date=1995-05-12);
+/* 2022-07-07 13:05:34 [4 ms] */ 
+CREATE DATABASE kamar;
+/* 2022-07-07 13:08:29 [20 ms] */ 
+CREATE TABLE students(enroll int , name VARCHAR(10) );
+/* 2022-07-07 13:09:04 [21 ms] */ 
+CREATE INDEX indexx on students(enroll,name);
+/* 2022-07-12 09:49:15 [26 ms] */ 
+create table client(clientno int(5),name varchar(30),client_referred_by int);
+/* 2022-07-12 09:49:17 [20 ms] */ 
+create table order_line(orderno int, order_line_number int, item_number int,no_of_item int, item_cost int,shipping_date date);
+/* 2022-07-12 09:49:18 [19 ms] */ 
+create table orders(orderno int,clientno int,order_date date,empid int);
+/* 2022-07-12 09:49:19 [20 ms] */ 
+create table item(item_number int,item_type varchar(30),cost int);
+/* 2022-07-12 09:49:20 [21 ms] */ 
+create table employee(empid int,emp_type varchar(20),deptno int,salary int,firstname varchar(20),lastname varchar(20));
+/* 2022-07-12 09:49:42 [18 ms] */ 
+insert into client values(1,'Kamar',4);
+/* 2022-07-12 09:49:43 [29 ms] */ 
+insert into client values(2,'RONAK',3);
+/* 2022-07-12 09:49:44 [3 ms] */ 
+insert into client values(3,'ROHIT',2);
+/* 2022-07-12 09:49:45 [4 ms] */ 
+insert into client values(4,'Ashish',1);
+/* 2022-07-12 09:49:46 [3 ms] */ 
+insert into client values(5,'KASHISH',5);
+/* 2022-07-12 09:50:10 [4 ms] */ 
+insert into employee values(101,'CLERK',4,15000,'RITIK','BANAL');
+/* 2022-07-12 09:50:11 [17 ms] */ 
+insert into employee values(102,'MANAGER',3,55000,'MAHESH','PATHAK');
+/* 2022-07-12 09:50:12 [8 ms] */ 
+insert into employee values(103,'CLERK',4,15000,'RITIKA','MITTAL');
+/* 2022-07-12 09:50:13 [7 ms] */ 
+insert into employee values(104,'OFFICER',5,23000,'RAJESH','SINGH');
+/* 2022-07-12 09:50:14 [8 ms] */ 
+insert into employee values(105,'OFFICER',5,25000,'KRITIKA','AGGARWAL');
+/* 2022-07-12 09:51:24 [5 ms] */ 
+insert into orders values(10,4,'2022-03-04',101);
+/* 2022-07-12 09:51:25 [7 ms] */ 
+insert into orders values(12,3,'2022-05-04',102);
+/* 2022-07-12 09:51:26 [8 ms] */ 
+insert into orders values(13,2,'2022-09-04',103);
+/* 2022-07-12 09:51:27 [7 ms] */ 
+insert into orders values(14,1,'2022-8-04',104);
+/* 2022-07-12 09:51:29 [4 ms] */ 
+insert into item values(40,'Stationery',500);
+/* 2022-07-12 09:51:30 [8 ms] */ 
+insert into item values(41,'Grocery',570);
+/* 2022-07-12 09:51:31 [7 ms] */ 
+insert into item values(40,'Stationery',15000);
+/* 2022-07-12 09:51:33 [8 ms] */ 
+insert into item values(40,'Machinery',28000);
+/* 2022-07-12 09:51:34 [2 ms] */ 
+insert into item values(40,'Machinery',30000);
+/* 2022-07-12 09:52:32 [5 ms] */ 
+select * from client order by name desc;
+/* 2022-07-12 09:52:33 [31 ms] */ 
+select item_number,no_of_item*item_cost as 'Total Cost' from order_line;
+/* 2022-07-12 09:54:00 [3 ms] */ 
+select distinct (clientno)from orders;
+/* 2022-07-12 09:54:01 [3 ms] */ 
+select clientno as 'Client',orderno as 'Ordered' from orders;
+/* 2022-07-12 09:54:02 [2 ms] */ 
+select * from order_line where item_number between 1 and 200 OR item_number>1000 AND item_cost not in(1000,2000,3000) OR orderno!=1000;
+/* 2022-07-12 09:54:03 [5 ms] */ 
+select name,order_date from client,orders where client.clientno=orders.clientno;
+/* 2022-07-12 09:54:09 [1 ms] */ 
+select * from order_line where item_number between 1 and 200 OR item_number>1000 AND item_cost not in(1000,2000,3000) OR orderno!=1000;
+/* 2022-07-12 09:54:11 [3 ms] */ 
+select clientno as 'Client',orderno as 'Ordered' from orders;
+/* 2022-07-12 09:54:56 [3 ms] */ 
+select * from order_line where item_number between 1 and 200 OR item_number>1000 AND item_cost not in(1000,2000,3000) OR orderno!=1000;
+/* 2022-07-12 09:55:25 [3 ms] */ 
+select * from client order by name desc;
